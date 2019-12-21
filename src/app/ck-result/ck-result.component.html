@@ -34,33 +34,31 @@
             tabsForm.value.border_width,tabsForm.value.border_table_type,tabsForm.value.border_color)">
         <div class="tabs-content">
           <div class="table-type">
-            <div class="form-group">
+            <div class="form-groups">
               <label>Input count of row:</label>
               <input name="row_count" class="form-control" type="number" ngModel #rowCount="ngModel">
             </div>
-            <div class="form-group">
+            <div class="form-groups">
               <label>Input count of cell:</label>
               <input name="cells_count" class="form-control" type="number" ngModel #cellsCount="ngModel">
             </div>
           </div>
-          <label id="title">Table style</label>
-
           <div class="cell=sizes">
-            <div class="form-group">
+            <div class="form-groups">
               <label >Input width of cell:</label>
               <input name="cell_width" class="form-control" type="text" ngModel #cellWidth="ngModel">
             </div>
-            <div class="form-group">
+            <div class="form-groups">
               <label>Input height of cell:</label>
               <input name="cell_height" class="form-control" type="text" ngModel #cellHeight>
             </div>
           </div>
           <div class="border-view">
-            <div class="form-group">
+            <div class="form-groups">
               <label for="border-width">Border width: </label>
               <input id="border-width" class="form-control" type="text" name="border_width" ngModel #borderWidth="ngModel">
             </div>
-            <div class="form-group form-check">
+            <div class="form-groups form-check">
               <label class="border-type-group">Border type:</label>
               <select aria-label="" class="form-control" name="border_table_type" ngModel #borderTabType="ngModel">
                 <option value="Solid">Solid</option>
@@ -70,7 +68,7 @@
               </select>
 
             </div>
-            <div class="form-group form-check">
+            <div class="form-groups form-check">
               <label class="border-color-group">Border color:</label>
               <select aria-label="" class="form-control"  name="border_color" ngModel  #borderColor="ngModel">
                 <option value="Red">Red</option>
@@ -92,18 +90,18 @@
     <div class="tabs__content">
       <form action="" #listForm="ngForm" (ngSubmit)="createList(listForm.value.list_count, listForm.value.type_of_mark, listForm.value.border_type)">
         <div class="list-content">
-          <div class="form-group">
+          <div class="form-groups">
             <label>Input count of list items:</label>
             <input aria-label="count of list" type="number" name="list_count" ngModel #listCount>
           </div>
-          <div class="form-group">
+          <div class="form-groups">
             <label for="type-of-mark">Type of mark: </label>
             <select aria-label="" ngModel id="type-of-mark" name="type_of_mark" #markType>
               <option value="ul">ul</option>
               <option value="ol">ol</option>
             </select>
           </div>
-          <div class="form-group form-check">
+          <div class="form-groups form-check">
 
             <label class="border-type-group">Border type:</label>
             <select aria-label="" name="border_type" ngModel #borderListType>
@@ -172,8 +170,8 @@
       </div>
     </div>
     <div class="colors-btn-group">
-      <a class="btn btn-primary" href="#font-colors-modal" rel="modal:open">FontsColor</a>
-      <a class="btn btn-primary" href="#bkg-colors-modal" rel="modal:open">BgColor</a>
+      <a class="btns" href="#font-colors-modal" rel="modal:open">FontsColor</a>
+      <a class="btns" href="#bkg-colors-modal" rel="modal:open">BgColor</a>
     </div>
     <!--Font colors block begin-->
     <div id="font-colors-modal" class="tabs modal">

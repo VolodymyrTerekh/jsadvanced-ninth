@@ -49,3 +49,13 @@
   background-color: white;
   color: black;
 }
+
+.form-groups {
+  width: 40%;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.form-check {
+  display: inline-block;
+}
