@@ -1,0 +1,248 @@
+<div class="ck-result">
+  <div class="ck-result-edit">
+    <form #form="ngForm">
+      <div class="btn-group">
+        <button>p</button>
+        <button>h1</button>
+        <button>h2</button>
+        <button>h3</button>
+        <button>h4</button>
+        <button>h5</button>
+        <button>h6</button>
+        <button>*</button>
+      </div>
+      <div class="form-group">
+        <textarea class="form-textarea" id="ck-editor-text" contenteditable="true" style="" name="edit" #editText>{{beginValue}}</textarea>
+      </div>
+      <div class="form-group">
+        <button>Зберегти</button>
+        <button>Додати</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ck-result">
+  <ul class="tabs__caption">
+      <li class="active">Table</li>
+      <li>List</li>
+
+    </ul>
+    <div class="tabs__content  active">
+      <form action="" #tabsForm="ngForm" (ngSubmit)="createTable(tabsForm.value.row_count,tabsForm.value.cells_count,
+            tabsForm.value.cell_width,tabsForm.value.cell_height,
+            tabsForm.value.border_width,tabsForm.value.border_table_type,tabsForm.value.border_color)">
+        <div class="tabs-content">
+          <div class="table-type">
+            <div class="form-group">
+              <label>Input count of row:</label>
+              <input name="row_count" class="form-control" type="number" ngModel #rowCount="ngModel">
+            </div>
+            <div class="form-group">
+              <label>Input count of cell:</label>
+              <input name="cells_count" class="form-control" type="number" ngModel #cellsCount="ngModel">
+            </div>
+          </div>
+          <label id="title">Table style</label>
+
+          <div class="cell=sizes">
+            <div class="form-group">
+              <label >Input width of cell:</label>
+              <input name="cell_width" class="form-control" type="text" ngModel #cellWidth="ngModel">
+            </div>
+            <div class="form-group">
+              <label>Input height of cell:</label>
+              <input name="cell_height" class="form-control" type="text" ngModel #cellHeight>
+            </div>
+          </div>
+          <div class="border-view">
+            <div class="form-group">
+              <label for="border-width">Border width: </label>
+              <input id="border-width" class="form-control" type="text" name="border_width" ngModel #borderWidth="ngModel">
+            </div>
+            <div class="form-group form-check">
+              <label class="border-type-group">Border type:</label>
+              <select aria-label="" class="form-control" name="border_table_type" ngModel #borderTabType="ngModel">
+                <option value="Solid">Solid</option>
+                <option value="Double">Double</option>
+                <option value="Ridge">Ridge</option>
+                <option value="Groove">Groove</option>
+              </select>
+
+            </div>
+            <div class="form-group form-check">
+              <label class="border-color-group">Border color:</label>
+              <select aria-label="" class="form-control"  name="border_color" ngModel  #borderColor="ngModel">
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Orange">Orange</option>
+                <option value="Brown">Brown</option>
+                <option value="Black">Black</option>
+                <option value="Gray">Gray</option>
+                <option value="Blue">Blue</option>
+                <option value="Violet">Violet</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-info" id="create-table" >Create Table</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="tabs__content">
+      <form action="" #listForm="ngForm" (ngSubmit)="createList(listForm.value.list_count, listForm.value.type_of_mark, listForm.value.border_type)">
+        <div class="list-content">
+          <div class="form-group">
+            <label>Input count of list items:</label>
+            <input aria-label="count of list" type="number" name="list_count" ngModel #listCount>
+          </div>
+          <div class="form-group">
+            <label for="type-of-mark">Type of mark: </label>
+            <select aria-label="" ngModel id="type-of-mark" name="type_of_mark" #markType>
+              <option value="ul">ul</option>
+              <option value="ol">ol</option>
+            </select>
+          </div>
+          <div class="form-group form-check">
+
+            <label class="border-type-group">Border type:</label>
+            <select aria-label="" name="border_type" ngModel #borderListType>
+              <option value="Circle">Circle</option>
+              <option value="Square">Square</option>
+              <option value="Armenian">Armenian</option>
+              <option value="Decimal">Decimal</option>
+              <option value="None">None</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-info" >Create List</button>
+      </form>
+
+    </div>
+</div>
+
+<div class="ck-result">
+    <div class="styles-group container">
+    <div class="font-sizes row input-group">
+      <label>
+        Text size:&nbsp;
+      </label>
+      <form #fontForm="ngForm">
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="radio"
+                   (change)="setSize(size12)" value="12px" name="fontsize" id="font-size1">
+            <label for="font-size1" class="form-check-label">12px</label>
+          </div>&nbsp;
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="14px"
+                   (change)="setSize(size14)" name="fontsize" id="font-size2">
+            <label for="font-size2" class="form-check-label">14px</label>
+          </div>&nbsp;
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="16px"
+                   (change)="setSize(size16)" name="fontsize" id="font-size3">
+            <label for="font-size3" class="form-check-label">16px</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="18px"
+                   (change)="setSize(size18)" name="fontsize" id="font-size4">
+            <label for="font-size4" class="form-check-label">18px</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" value="20px"
+                   (change)="setSize(size20)" name="fontsize" id="font-size5">
+            <label for="font-size5" class="form-check-label">20px</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <label>
+        Font family:&nbsp;
+      </label>
+      <div class="font-fams">
+        <select>
+          <option (select)="setFontFam('Roboto')">Roboto</option>
+          <option (select)="setFontFam('Arial')">Arial</option>
+          <option (select)="setFontFam('Calibri')" [selected]="true">Сalibri Light</option>
+          <option (select)="setFontFam('Cambria')">Сambria</option>
+          <option (select)="setFontFam('Segoe')">Segoe UI Black</option>
+        </select>
+      </div>
+    </div>
+    <div class="colors-btn-group">
+      <a class="btn btn-primary" href="#font-colors-modal" rel="modal:open">FontsColor</a>
+      <a class="btn btn-primary" href="#bkg-colors-modal" rel="modal:open">BgColor</a>
+    </div>
+    <!--Font colors block begin-->
+    <div id="font-colors-modal" class="tabs modal">
+      <h4 class="modal-title">Font Color palette</h4>
+      <table class="colors-group">
+        <tr>
+          <td><button class="darkred btn" (click)="fontColor(darkred)"></button></td>
+          <td><button class="red" (click)="fontColor(red)"></button></td>
+          <td><button class="orange" (click)="fontColor(orange)"></button></td>
+          <td><button class="yellow" (click)="fontColor(yellow)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="darkgreen" (click)="fontColor(darkgreen)"></button></td>
+          <td><button class="green" (click)="fontColor(green)"></button></td>
+          <td><button class="blue" (click)="fontColor(blue)"></button></td>
+          <td><button class="darkblue" (click)="fontColor(darkblue)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="violet" (click)="fontColor(violet)"></button></td>
+          <td><button class="white" (click)="fontColor(white)"></button></td>
+          <td><button class="black" (click)="fontColor(black)"></button></td>
+          <td><button class="brown" (click)="fontColor(brown)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="darkbrown" (click)="fontColor(darkbrown)"></button></td>
+          <td><button class="gray" (click)="fontColor(gray)"></button></td>
+          <td><button class="lightgray" (click)="fontColor(lightgray)"></button></td>
+          <td><button class="darkgray" (click)="fontColor(darkgray)"></button></td>
+        </tr>
+      </table>
+    </div>
+    <!--Font colors block end-->
+    <!--Background colors block begin -->
+    <div id="bkg-colors-modal" class="tabs modal">
+      <h4 class="modal-title">Background color palette</h4>
+      <table class="colors-group">
+        <tr>
+          <td><button class="darkred" (click)="bkgColor(darkred)"></button></td>
+          <td><button class="red" (click)="bkgColor(red)"></button></td>
+          <td><button class="orange" (click)="bkgColor(orange)"></button></td>
+          <td><button class="yellow" (click)="bkgColor(yellow)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="darkgreen" (click)="bkgColor(darkgreen)"></button></td>
+          <td><button class="green" (click)="bkgColor(green)"></button></td>
+          <td><button class="blue" (click)="bkgColor(blue)"></button></td>
+          <td><button class="darkblue" (click)="bkgColor(darkblue)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="violet" (click)="bkgColor(violet)"></button></td>
+          <td><button class="white" (click)="bkgColor(white)"></button></td>
+          <td><button class="black" (click)="bkgColor(black)"></button></td>
+          <td><button class="brown" (click)="bkgColor(brown)"></button></td>
+        </tr>
+        <tr>
+          <td><button class="darkbrown" (click)="bkgColor(darkbrown)"></button></td>
+          <td><button class="gray" (click)="bkgColor(gray)"></button></td>
+          <td><button class="lightgray" (click)="bkgColor(lightgray)"></button></td>
+          <td><button class="darkgray" (click)="bkgColor(darkgray)"></button></td>
+        </tr>
+      </table>
+
+    </div>
+    <!--Background colors block end -->
+
+    <div class="chks-group">
+      <label><input #bold type="checkbox" (click)="setBold(isBold = !isBold)"><b>Bold</b>text</label>&nbsp;&nbsp;
+      <label><input #italic type="checkbox"
+                    (click)="setItalic(isItalic = !isItalic)"><span>Italic</span>text</label>
+    </div>
+  </div>
+</div>

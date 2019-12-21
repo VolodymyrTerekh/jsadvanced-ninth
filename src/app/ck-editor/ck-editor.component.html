@@ -1,0 +1,5 @@
+<div class="ck-editor" id="textValue" [ngStyle]="{ 'font-size': someGeterSize() + 'px', 'font-family': setFontFam() + ',sans-serif'}" [ngClass]="{ textbold: Bold, textitalic: Italic }">
+	{{ getText() }}
+</div>
+<app-ck-settings></app-ck-settings>
+<app-ck-result (fontEvent)="setBold($event)" (fontEvent1)="setItalic($event)" (radioEvent)="radioEvent($event)" (selectEvent)="selectEvent($event)" (textEvent)="receiveText($event)" [beginValue]="textVal"></app-ck-result>

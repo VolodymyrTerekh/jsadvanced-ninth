@@ -1,0 +1,51 @@
+.ck-result {
+  width: 80%;
+  background-color: #660000;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-group button{
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  margin: 0 auto;
+  margin-left: 10px;
+  padding: 5px 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group button{
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  margin: 0 auto;
+  margin-left: 10px;
+  padding: 10px 30px;
+}
+
+.form-group .form-textarea {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.tabs__caption {
+  list-style: none;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.tabs__caption li{
+  display: inline-block;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.tabs__caption .active {
+  background-color: white;
+  color: black;
+}

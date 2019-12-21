@@ -1,0 +1,16 @@
+.ck-settings-nav {
+  width: 80%;
+  background-color: #660000;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 1rem;
+  background-color: red;
+  border: 1px solid white;
+  color: white;
+}
